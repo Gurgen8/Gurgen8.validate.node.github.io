@@ -1,0 +1,17 @@
+<%- include('../header') %>
+
+<% if(register){ %>
+    <h4>You are successfully registered</h4>
+<% } %>
+<form action="/users/registration" method="post">
+    <input type="email" name="email" value="<%= data.email %>" placeholder="Email">
+    <span class="error">
+       <%= errors.email ? errors.email[0] : null %>
+    </span>
+    <br>
+    <input type="password" name="password" value="<%= data.password %>" placeholder="Password">
+    <br>
+    <button>Login</button>
+</form>
+
+<%- include('../footer') %>
